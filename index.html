@@ -5,12 +5,52 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
   <title>Frontend Mentor | Interactive card details form</title>
   </style>
 </head>
 
 <body>
 
+  <main class="main">
+    <div class="main__wrapper">
+      <!-- cards  -->
+      <div class="card-display">
+        <!-- front -->
+        <div class="card-display__front card-front">
+          <div class="card-front__header">
+            <img src="./images/card-logo.svg" class="card-front__logo" alt="Logo" />
+          </div>
+
+          <div class="card-front__body">
+            <h1 class="card-front__card-number">
+              <span class="card-front__number card-front__number--1">0000</span>
+              <span class="card-front__number card-front__number--2">0000</span>
+              <span class="card-front__number card-front__number--3">0000</span>
+              <span class="card-front__number card-front__number--4">0000</span>
+            </h1>
+            <div class="card-front__meta">
+              <span class="card-front__name">Jane Appleseed</span>
+              <span class="card-front__date">
+                <span class="card-front__date--month">01</span>
+                <span class="card-front__date--separator">&sol;</span>
+                <span class="card-front__date--year">26</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- back -->
+        <div class="card-display__back"></div>
+      </div>
+
+      <!-- form -->
+      <div class="card-details-form"></div>
+    </div>
+  </main>
 
 </body>
 
