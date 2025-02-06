@@ -58,6 +58,7 @@ body {
   align-self: stretch;
   width: 48.3rem;
   height: 100%;
+  position: relative;
 }
 
 /* card-display__front */
@@ -68,12 +69,18 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 2.5rem;
+  padding: 2.8rem;
   width: 44.7rem;
   height: 24.5rem;
+  position: absolute;
+  top: 20%;
+  left: 29%;
 }
 
 .card-front__card-number {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-size: 2.8rem;
 }
 
@@ -96,4 +103,24 @@ body {
 
 .card-front__date {
   font-size: var(--fs-14);
+}
+
+/* card-display__back */
+.card-display__back {
+  color: var(--color-white);
+  background-image: url(../images/bg-card-back.png);
+  background-repeat: no-repeat;
+  width: 44.7rem;
+  height: 24.5rem;
+  position: absolute;
+  top: 54%;
+  left: 51%;
+}
+
+.card-back__cvv {
+  position: absolute;
+  top: 49%;
+  right: 13%;
+  transform: translateY(-50%);
+  letter-spacing: 0.2rem;
 }
