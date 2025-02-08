@@ -53,8 +53,47 @@
 
       <!-- form -->
       <div class="card-details-form">
-        <h1>form goes here...</h1>
+        <form class="form form--card-details card-details">
+
+          <div class="form__inner">
+            <div class="row row--cardholder">
+              <label for="cardholder" class="row__label row__label--cardholder">cardholder name</label>
+              <input class="row__input row__input--cardholder" id="cardholder" type="text"
+                placeholder="e.g. James Appleseed" />
+              <span class="row__error row__error--cardholder hide">not found</span>
+            </div>
+
+            <div class="row row--cardnumber">
+              <label for="cardNumber" class="row__label row__label--cardnumber">card number</label>
+              <input class="row__input row__input--cardnumber" id="cardNumber" type="text"
+                placeholder="e.g. 1234 5678 9123 0000" />
+              <span class="row__error row__error--cardnumber hide">not found</span>
+            </div>
+
+            <div class="form__wrapper">
+              <div class="row row--cardexpiry">
+                <label for="cardExpiry" class="row__label row__label--cardexpiry">exp. date (mm/yy)</label>
+                <div class="row--cardexpiry__inputs">
+                  <input class="row__input row__input--cardexpiry row__input--cardexpiry--month" id="cardExpiry"
+                    type="text" placeholder="MM" />
+                  <input class="row__input row__input--cardexpiry row__input--cardexpiry--year" id="cardExpiry"
+                    type="text" placeholder="YY" />
+                </div>
+                <span class="row__error row__error--cardexpiry hide">not found</span>
+              </div>
+
+              <div class="row row--cardcvc">
+                <label for="cardCvc" class="row__label row__label--cardcvc">cvc</label>
+                <input class="row__input row__input--cardcvc" id="cardCvc" placeholder="e.g. 123" />
+                <span class="row__error row__error--cardcvc hide">not found</span>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn--submit">Confirm</button>
+        </form>
       </div>
+
     </div>
   </main>
 
