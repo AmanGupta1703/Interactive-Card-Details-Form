@@ -1,0 +1,25 @@
+.btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  display: block;
+}
+
+.btn--primary {
+  color: var(--color-white);
+  background-color: var(--color-neutral-03);
+  border-radius: 0.8rem;
+  padding: 1.5rem 0;
+  letter-spacing: 0.1rem;
+  transition: all 500ms ease-in-out;
+  width: 100%;
+}
+
+.btn--primary:hover,
+.btn--primary:focus {
+  box-shadow: 0.6rem 0.6rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.btn--submit:active {
+  box-shadow: 0.2rem 0.2rem 0.6rem rgba(0, 0, 0, 0.1);
+}

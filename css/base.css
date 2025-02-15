@@ -1,0 +1,51 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* colors */
+  --color-white: hsl(0, 0%, 100%);
+
+  --color-primary-01: hsl(249, 99%, 64%);
+  --color-primary-02: hsl(278, 94%, 30%);
+  --color-primary-03: hsl(0, 100%, 66%);
+  --gradient-primary: linear-gradient(to right, var(--color-primary-01), var(--color-primary-02));
+
+  --color-neutral-01: hsl(270, 3%, 87%);
+  --color-neutral-02: hsl(279, 6%, 55%);
+  --color-neutral-03: hsl(278, 68%, 11%);
+  --color-neutral-04: hsl(0, 0%, 84%);
+
+  /* font-family */
+  --ff-primary: "Space Grotesk", serif;
+
+  /* font-size */
+  --fs-10: 1rem;
+  --fs-12: 1rem;
+  --fs-14: 1.4rem;
+  --fs-16: 1.6rem;
+  --fs-18: 1.8rem;
+
+  /* font-weight */
+  --fw-500: 500;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1rem = 10px  */
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-16);
+  font-weight: var(--fw-500);
+}
+
+input,
+button {
+  font-family: inherit;
+}

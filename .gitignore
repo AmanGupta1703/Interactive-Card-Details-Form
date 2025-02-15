@@ -17,3 +17,6 @@
 
 # txt file (containing website text content)
 *.txt
+
+# CSS
+css/media-queries.css
