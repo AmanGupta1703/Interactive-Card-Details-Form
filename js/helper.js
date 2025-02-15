@@ -10,8 +10,14 @@ export const hasNumber = function (myString) {
   return /\d/.test(myString);
 };
 
-export const setInitialCardText = function (cardEl, textContent) {
-  cardEl.textContent = textContent;
+export const setInitialCardText = function (className) {
+  for (const key of Object.keys(initalCardDetails)) {
+    if (key === "cardNumber") {
+      className.forEach((numberSpanEl) => (numberSpanEl.textContent = "0000"));
+    } else {
+      setCardDetails(key, initalCardDetails[key]);
+    }
+  }
 };
 
 const showInputError = function (className) {

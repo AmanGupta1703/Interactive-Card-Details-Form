@@ -1,7 +1,13 @@
 "use strict";
 
 // Imports
-import { hasNumber, showErrorMessage, hideErrorMessage, setCardDetails } from "./helper.js";
+import {
+  hasNumber,
+  showErrorMessage,
+  hideErrorMessage,
+  setCardDetails,
+  setInitialCardText,
+} from "./helper.js";
 
 // Elements
 const cardDetailsForm = document.querySelector(".card-details-form");
@@ -93,9 +99,5 @@ formCardDetailsEl.addEventListener("input", function (ev) {
 btnContinue.addEventListener("click", function (ev) {
   cardDetailsForm.classList.toggle("hide");
   thankYouEl.classList.toggle("hide");
-  cardFrontNameEl.textContent = "James AppleSeed";
-  cardFrontNumberEls.forEach((numberSpanEl) => (numberSpanEl.textContent = "0000"));
-  cardFrontDateMonthEl.textContent = "00";
-  cardFrontDateYearEL.textContent = "00";
-  cardBackCvcEl.textContent = "000";
+  setInitialCardText(cardFrontNumberEls);
 });
