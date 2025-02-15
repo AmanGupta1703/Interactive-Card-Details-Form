@@ -12,11 +12,6 @@ import {
 // Elements
 const cardDetailsForm = document.querySelector(".card-details-form");
 const cardFrontNumberEls = document.querySelectorAll(".card-front__number");
-const cardFrontNameEl = document.querySelector(".card-front__name");
-const cardFrontDateMonthEl = document.querySelector(".card-front__date--month");
-const cardFrontDateYearEL = document.querySelector(".card-front__date--year");
-
-const cardBackCvcEl = document.querySelector(".card-back__cvv");
 
 const formCardDetailsEl = document.querySelector(".form--card-details");
 const btnConfirm = document.querySelector(".btn--confirm");
