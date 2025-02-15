@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
+  <script defer type="module" src="./js/script.js"></script>
   <title>Frontend Mentor | Interactive card details form</title>
   </style>
 </head>
@@ -26,18 +27,18 @@
           </div>
 
           <div class="card-front__body">
-            <h1 class="card-front__card-number">
+            <h1 class="card-front__card-number" data-card="cardNumber">
               <span class="card-front__number card-front__number--1">0000</span>
               <span class="card-front__number card-front__number--2">0000</span>
               <span class="card-front__number card-front__number--3">0000</span>
               <span class="card-front__number card-front__number--4">0000</span>
             </h1>
             <div class="card-front__meta">
-              <span class="card-front__name">Jane Appleseed</span>
+              <span class="card-front__name" data-card="cardholder">Jane Appleseed</span>
               <span class="card-front__date">
-                <span class="card-front__date--month">00</span>
+                <span class="card-front__date--month" data-card="cardExpiryMonth">00</span>
                 <span class="card-front__date--separator">&sol;</span>
-                <span class="card-front__date--year">00</span>
+                <span class="card-front__date--year" data-card="cardExpiryYear">00</span>
               </span>
             </div>
           </div>
@@ -46,7 +47,7 @@
         <!-- back -->
         <div class="card-display__back card-back">
           <div class="card-back__body">
-            <span class="card-back__cvv">000</span>
+            <span data-card="cardCvc" class="card-back__cvv">000</span>
           </div>
         </div>
       </div>
@@ -58,40 +59,50 @@
           <div class="form__inner">
             <div class="row row--cardholder">
               <label for="cardholder" class="row__label row__label--cardholder">cardholder name</label>
-              <input class="row__input row__input--cardholder" id="cardholder" type="text"
-                placeholder="e.g. James Appleseed" />
-              <span class="row__error row__error--cardholder hide">not found</span>
+              <input required class="row__input row__input--cardholder" id="cardholder" type="text"
+                placeholder="e.g. James Appleseed" name="cardholder" />
+              <span data-error="cardholder" class="row__error row__error--cardholder hide">not found</span>
             </div>
 
             <div class="row row--cardnumber">
-              <label for="cardNumber" class="row__label row__label--cardnumber">card number</label>
-              <input class="row__input row__input--cardnumber" id="cardNumber" type="text"
-                placeholder="e.g. 1234 5678 9123 0000" />
-              <span class="row__error row__error--cardnumber hide">not found</span>
+              <label for="cardNumber" class="row__label row__label--cardNumber">card number</label>
+              <input required class="row__input row__input--cardnumber" id="cardNumber" type="text"
+                placeholder="e.g. 1234 5678 9123 0000" name="cardNumber" />
+              <span data-error="cardNumber" class="row__error row__error--cardNumber hide">not found</span>
             </div>
 
             <div class="form__wrapper">
               <div class="row row--cardexpiry">
                 <label for="cardExpiry" class="row__label row__label--cardexpiry">exp. date (mm/yy)</label>
                 <div class="row--cardexpiry__inputs">
-                  <input class="row__input row__input--cardexpiry row__input--cardexpiry--month" id="cardExpiry"
-                    type="text" placeholder="MM" />
-                  <input class="row__input row__input--cardexpiry row__input--cardexpiry--year" id="cardExpiry"
-                    type="text" placeholder="YY" />
+                  <input required class="row__input row__input--cardexpiry row__input--cardexpiry--month"
+                    id="cardExpiry" type="text" placeholder="MM" name="cardExpiryMonth" />
+                  <input required class="row__input row__input--cardexpiry row__input--cardexpiry--year" id="cardExpiry"
+                    type="text" placeholder="YY" name="cardExpiryYear" />
                 </div>
-                <span class="row__error row__error--cardexpiry hide">not found</span>
+                <span data-error="cardExpiryMonth" class="row__error row__error--cardExpiryMonth hide">not found</span>
+                <span data-error="cardExpiryYear" class="row__error row__error--cardExpiryYear hide">not found</span>
               </div>
 
               <div class="row row--cardcvc">
                 <label for="cardCvc" class="row__label row__label--cardcvc">cvc</label>
-                <input class="row__input row__input--cardcvc" id="cardCvc" placeholder="e.g. 123" />
-                <span class="row__error row__error--cardcvc hide">not found</span>
+                <input required class="row__input row__input--cardcvc" id="cardCvc" placeholder="e.g. 123"
+                  name="cardCvc" />
+                <span data-error="cardCvc" class="row__error row__error--cardCvc hide">not found</span>
               </div>
             </div>
           </div>
 
-          <button type="submit" class="btn btn--submit">Confirm</button>
+          <button type="submit" class="btn btn--primary btn--confirm">Confirm</button>
         </form>
+      </div>
+
+      <!-- thank you -->
+      <div class="thank-you hide">
+        <img class="thank-you__img" src="./images/icon-complete.svg" alt="Complete" />
+        <h1 class="thank-you__title">THANK YOU!</h1>
+        <p class="thank-you__text">We've added your card details</p>
+        <button type="button" class="btn btn--primary btn--continue">Continue</button>
       </div>
 
     </div>
