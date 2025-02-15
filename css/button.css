@@ -5,6 +5,10 @@
   display: block;
 }
 
+.btn:disabled {
+  cursor: not-allowed;
+}
+
 .btn--primary {
   color: var(--color-white);
   background-color: var(--color-neutral-03);

@@ -14,13 +14,14 @@ const cardDetailsForm = document.querySelector(".card-details-form");
 const cardFrontNumberEls = document.querySelectorAll(".card-front__number");
 
 const formCardDetailsEl = document.querySelector(".form--card-details");
-const btnConfirm = document.querySelector(".btn--confirm");
+export const btnConfirm = document.querySelector(".btn--confirm");
 
 const thankYouEl = document.querySelector(".thank-you");
 const btnContinue = document.querySelector(".btn--continue");
 
 // Variables
 let id = null;
+const cardDetails = {};
 
 // Event listeners
 formCardDetailsEl.addEventListener("submit", function (ev) {
@@ -51,8 +52,8 @@ formCardDetailsEl.addEventListener("input", function (ev) {
   } else if (name === "cardNumber") {
     const trimmedValue = value.replace(/\s+/g, "");
 
-    if (trimmedValue.length > 16) {
-      showErrorMessage("cardNumber", "Card number cannot be longer than 16 digits.");
+    if (trimmedValue.length > 16 || !trimmedValue.length) {
+      showErrorMessage("cardNumber", `Invalid ${name}`);
     } else {
       hideErrorMessage("cardNumber");
       const rowInputCardNumberEl = document.querySelector(".row__input--cardnumber");
@@ -82,13 +83,15 @@ formCardDetailsEl.addEventListener("input", function (ev) {
       setCardDetails(name, value);
     }
   } else if (name === "cardCvc") {
-    if (value.length > 4 || !hasNumber(Number(value))) {
+    if (value.length < 3 || value.length > 4 || !hasNumber(Number(value))) {
       showErrorMessage(name, "Invalid Cvc.");
     } else {
       hideErrorMessage(name);
       setCardDetails(name, value);
     }
   }
+
+  cardDetails[name] = value;
 });
 
 btnContinue.addEventListener("click", function (ev) {

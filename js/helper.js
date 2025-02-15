@@ -1,3 +1,5 @@
+import { btnConfirm } from "./script.js";
+
 const initalCardDetails = {
   cardNumber: "0000",
   cardholder: "James AppleSeed",
@@ -36,6 +38,7 @@ export const showErrorMessage = function (className, textContent) {
   showInputError(className);
   errorEl.classList.remove("hide");
   errorEl.textContent = textContent;
+  btnConfirm.disabled = true;
 };
 
 export const hideErrorMessage = function (className) {
@@ -43,6 +46,7 @@ export const hideErrorMessage = function (className) {
   hideInputError(className);
   errorEl.classList.add("hide");
   errorEl.textContent = "";
+  btnConfirm.disabled = false;
 };
 
 export const setCardDetails = function (className, value) {
