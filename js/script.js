@@ -53,10 +53,10 @@ formCardDetailsEl.addEventListener("input", function (ev) {
   } else if (name === "cardNumber") {
     const trimmedValue = value.replace(/\s+/g, "");
 
-    if (trimmedValue.length > 16 || !trimmedValue.length) {
-      showErrorMessage("cardNumber", `Invalid ${name}`);
+    if (trimmedValue.length > 16 || !trimmedValue.length || !hasNumber(trimmedValue)) {
+      showErrorMessage(name, `Invalid ${name}`);
     } else {
-      hideErrorMessage("cardNumber");
+      hideErrorMessage(name);
       const rowInputCardNumberEl = document.querySelector(".row__input--cardnumber");
       const rowInputCardNumberValue = value.replace(/(\d{4})(?=\d)/g, "$1 ");
       const cardNumberArray = rowInputCardNumberValue.split(" ");
