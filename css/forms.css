@@ -160,3 +160,23 @@
     width: 10rem;
   }
 }
+
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+  /* form */
+  .card-details-form {
+    width: 35%;
+  }
+
+  .form__inner {
+    row-gap: 3.2rem;
+  }
+
+  .row__label,
+  .row__input {
+    font-size: var(--fs-16);
+  }
+
+  .row--cardcvc {
+    width: 12rem;
+  }
+}
