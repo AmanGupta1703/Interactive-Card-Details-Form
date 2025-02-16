@@ -1,7 +1,44 @@
+.card-display__front,
+.card-front__card-number,
+.card-front__meta,
+.thank-you {
+  display: flex;
+}
+
+.card-display__front,
+.thank-you {
+  flex-direction: column;
+}
+
+.card-display__front,
+.card-front__card-number,
+.card-front__meta {
+  justify-content: space-between;
+}
+
+.card-front__card-number,
+.card-front__meta,
+.thank-you {
+  align-items: center;
+}
+
+.card-display__front,
+.card-display__back,
+.card-back__cvv {
+  position: absolute;
+}
+
+.card-display,
+.card-display__front,
+.card-display__back {
+  background-repeat: no-repeat;
+}
+
+/* ----------------------- */
+
 /* card-display */
 .card-display {
   background-image: url(../images/bg-main-desktop.png);
-  background-repeat: no-repeat;
   background-size: cover;
   width: 48.3rem;
   height: 100%;
@@ -12,23 +49,15 @@
 .card-display__front {
   color: var(--color-white);
   background-image: url(../images/bg-card-front.png);
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   padding: 2.8rem;
   width: 44.7rem;
   height: 24.5rem;
-  position: absolute;
   top: 20%;
   left: 29%;
 }
 
 .card-front__card-number {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 2.8rem;
+  font-size: var(--fs-28);
 }
 
 .card-front__number {
@@ -36,9 +65,6 @@
 }
 
 .card-front__meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   margin: 2rem 0 0;
 }
 
@@ -56,16 +82,13 @@
 .card-display__back {
   color: var(--color-white);
   background-image: url(../images/bg-card-back.png);
-  background-repeat: no-repeat;
   width: 44.7rem;
   height: 24.5rem;
-  position: absolute;
   top: 54%;
   left: 51%;
 }
 
 .card-back__cvv {
-  position: absolute;
   top: 49%;
   right: 13%;
   transform: translateY(-50%);
@@ -75,9 +98,6 @@
 /* thank-you */
 .thank-you {
   /* border: 0.2rem solid crimson; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   row-gap: 1.5rem;
   flex: 0.5;
 }
@@ -97,16 +117,20 @@
 }
 
 @media screen and (max-width: 768px) {
+  .card-display,
+  .card-display__front,
+  .card-display__back {
+    background-size: cover;
+  }
+
   .card-display {
     background-image: url(../images/bg-main-mobile.png);
-    background-size: cover;
     width: 100%;
     height: 24rem;
   }
 
   .card-display__front,
   .card-display__back {
-    background-size: cover;
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
     width: 30rem;
