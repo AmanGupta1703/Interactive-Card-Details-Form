@@ -137,8 +137,13 @@
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   /* card-details-form */
   .card-details-form {
-    width: 60%;
-    margin-top: 12rem;
+    width: 55%;
+    margin-top: 14rem;
+  }
+
+  .form__inner {
+    row-gap: 2.8rem;
+    margin-bottom: 2.8rem;
   }
 
   .row__input--cardexpiry--month,

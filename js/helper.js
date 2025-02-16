@@ -34,7 +34,7 @@ const hideInputError = function (className) {
 
 export const showErrorMessage = function (className, textContent) {
   const errorEl = document.querySelector(`.row__error--${className}`);
-
+  errorEl.textContent = "";
   showInputError(className);
   errorEl.classList.remove("hide");
   errorEl.textContent = textContent;
@@ -52,4 +52,9 @@ export const hideErrorMessage = function (className) {
 export const setCardDetails = function (className, value) {
   const cardTextEl = document.querySelector(`[data-card='${className}']`);
   cardTextEl.textContent = value;
+};
+
+export const toggleCardFormAndThankYou = function (cardDetailsForm, thankYouEl) {
+  cardDetailsForm.classList.toggle("hide");
+  thankYouEl.classList.toggle("hide");
 };

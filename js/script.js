@@ -7,6 +7,7 @@ import {
   hideErrorMessage,
   setCardDetails,
   setInitialCardText,
+  toggleCardFormAndThankYou,
 } from "./helper.js";
 
 // Elements
@@ -70,14 +71,14 @@ formCardDetailsEl.addEventListener("input", function (ev) {
     }
   } else if (name === "cardExpiryMonth") {
     if (value === "" || !hasNumber(Number(value)) || Number(value) > 12) {
-      showErrorMessage(name, "Invalid Month or Year.");
+      showErrorMessage(name, `Invalid ${name}.`);
     } else {
       hideErrorMessage(name);
       setCardDetails(name, value);
     }
   } else if (name === "cardExpiryYear") {
-    if (!value.length) {
-      showErrorMessage(name, "Invalid Month or Year.");
+    if (!value.length || value.length > 2) {
+      showErrorMessage(name, `Invalid ${name}.`);
     } else {
       hideErrorMessage(name);
       setCardDetails(name, value);
@@ -94,8 +95,7 @@ formCardDetailsEl.addEventListener("input", function (ev) {
   cardDetails[name] = value;
 });
 
-btnContinue.addEventListener("click", function (ev) {
-  cardDetailsForm.classList.toggle("hide");
-  thankYouEl.classList.toggle("hide");
+btnContinue.addEventListener("click", function () {
+  toggleCardFormAndThankYou(cardDetailsForm, thankYouEl);
   setInitialCardText(cardFrontNumberEls);
 });

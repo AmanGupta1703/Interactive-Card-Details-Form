@@ -143,6 +143,22 @@
   .card-back__cvv {
     font-size: var(--fs-12);
   }
+
+  /* thank-you */
+  .thank-you {
+    margin: 10rem auto 0;
+    row-gap: 1.8rem;
+    width: 95%;
+  }
+
+  .thank-you__title {
+    font-weight: 500;
+    font-size: var(--fs-24);
+  }
+
+  .thank-you__text {
+    font-size: var(--fs-14);
+  }
 }
 
 @media screen and (min-width: 319px) and (max-width: 374px) {
@@ -168,6 +184,11 @@
     top: 14%;
     left: 16%;
   }
+
+  /* thank-you */
+  .thank-you {
+    width: 85%;
+  }
 }
 
 @media screen and (min-width: 425px) and (max-width: 768px) {
@@ -179,6 +200,20 @@
   .card-display__back {
     top: 14%;
     left: 24%;
+  }
+
+  /* thank-you */
+  .thank-you {
+    width: 75%;
+    row-gap: 2.2rem;
+  }
+
+  .thank-you__title {
+    font-size: var(--fs-26);
+  }
+
+  .thank-you__text {
+    font-size: var(--fs-16);
   }
 }
 
@@ -194,15 +229,29 @@
   }
 
   .card-display__front {
+    top: 56%;
     left: 20%;
+  }
+
+  .card-front__card-number {
+    font-size: var(--fs-20);
   }
 
   /* card back */
   .card-display__back {
-    left: 32%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 38%;
   }
 
   .card-back__cvv {
     font-size: var(--fs-14);
+  }
+
+  /* thank-you */
+  .thank-you {
+    width: 50%;
+    row-gap: 2.2rem;
+    margin: 12rem auto 0;
   }
 }
