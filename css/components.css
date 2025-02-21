@@ -283,44 +283,29 @@
 
 @media screen and (min-width: 1024px) and (max-width: 1280px) {
   .card-display {
-    background-size: cover;
-    width: 42rem;
+    width: 38rem;
   }
 
-  /* card-front */
-  .card-display__front,
-  .card-display__back {
-    width: 44rem;
-    border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-  }
-
+  /* card front */
   .card-display__front {
-    padding: 2.4rem;
-    top: 24%;
-    left: 10%;
+    top: 25%;
+    left: 18%;
+  }
+
+  /* card back */
+  .card-display__back {
+    left: 40%;
+  }
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1440px) {
+  /* card front */
+  .card-display__front {
+    top: 30%;
   }
 
   /* card back */
   .card-display__back {
     top: 53%;
-    left: 26%;
-  }
-
-  /* thank you */
-  .thank-you {
-    flex: 0.9;
-  }
-
-  .thank-you__img {
-    height: 8rem;
-  }
-
-  .thank-you__title {
-    font-size: var(--fs-28);
-  }
-
-  .thank-you__text {
-    font-size: var(--fs-18);
   }
 }
